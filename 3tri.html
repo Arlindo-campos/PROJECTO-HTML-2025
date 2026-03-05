@@ -1,0 +1,83 @@
+<style>
+    body {
+        margin: 0;
+        background: #0f172a; /* Azul marinho muito escuro */
+        color: #f8fafc;
+        font-family: 'Courier New', monospace;
+        display: grid;
+        grid-template-rows: 80px 1fr;
+        height: 100vh;
+    }
+
+    /* Menu com borda inferior de neon */
+    .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 2px solid #38bdf8;
+        box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+    }
+
+    .menu a {
+        color: #38bdf8;
+        text-decoration: none;
+        margin: 0 20px;
+        padding: 5px 10px;
+        border: 1px solid transparent;
+        transition: 0.3s;
+    }
+
+    .menu a:hover {
+        border: 1px solid #38bdf8;
+        box-shadow: 0 0 10px #38bdf8;
+    }
+
+    .layout {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    /* Lado esquerdo com bordas duplas */
+    .sidebar {
+        width: 220px;
+        border: 4px double #38bdf8;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .sidebar a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 15px;
+        font-size: 14px;
+    }
+
+    /* Conteúdo com borda arredondada futurista */
+    .content {
+        flex: 1;
+        border-radius: 50px 0 50px 0;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: #1e293b;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<div class="menu">
+    <a href="index.html">HOME</a> <a href="">T1</a> <a href="">T2</a> <a href="">T3</a> <a href="">T4</a> <a href="">T5</a>
+</div>
+<div class="layout">
+    <div class="sidebar">
+        <a href="1tri.html">1º TRIMESTRE</a>
+        <a href="2tri.html">2º TRIMESTRE</a>
+        <a href="3tri.html">3º TRIMESTRE</a>
+    </div>
+    <div class="content">
+        <h1>OLÁ</h1>
+        <p>BEM-VINDO AO: <strong>3º TRIMESTRE</strong></p>
+    </div>
+</div>

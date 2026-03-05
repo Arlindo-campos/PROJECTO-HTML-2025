@@ -1,0 +1,165 @@
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Completo de CSS</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --code-bg: #282c34;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--light);
+            color: #334155;
+        }
+
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background: #fff;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 20px;
+        }
+
+        h2 { color: var(--primary); }
+
+        .code-block {
+            background: var(--code-bg);
+            color: #abb2bf;
+            padding: 20px;
+            border-radius: 6px;
+            font-family: 'Consolas', monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .highlight { color: #d19a66; } /* Cor para propriedades */
+        .value { color: #98c379; }      /* Cor para valores */
+
+        .box-model-demo {
+            border: 5px solid var(--primary);
+            padding: 20px;
+            margin: 20px 0;
+            background: #dbeafe;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Conteúdo Completa: CSS</h1>
+        <p>A arte de estilizar a web</p>
+    </header>
+
+    <nav>
+        <a href="#intro">Introdução</a>
+        <a href="#seletores">Seletores</a>
+        <a href="#boxmodel">Box Model</a>
+        <a href="#layout">Layout Moderno</a>
+    </nav>
+
+    <main>
+        <section id="intro">
+            <h2>1. Introdução ao CSS</h2>
+            <p>O CSS controla como os elementos HTML são exibidos na tela. Ele lida com o "design", permitindo que você altere cores, fontes, e a posição dos elementos.</p>
+            <p><strong>Cascata:</strong> O nome "Cascading" significa que se houver duas regras conflitantes, a que tiver maior especificidade ou a que aparecer por último no código será a aplicada.</p>
+        </section>
+
+        <section id="seletores">
+            <h2>2. Seletores e Sintaxe</h2>
+            <p>Para aplicar estilo, você precisa "apontar" para o elemento HTML:</p>
+            <div class="code-block">
+                <span style="color: #e06c75;">h1</span> { <br>
+                &nbsp;&nbsp;<span class="highlight">color</span>: <span class="value">red</span>; <br>
+                &nbsp;&nbsp;<span class="highlight">font-size</span>: <span class="value">32px</span>; <br>
+                }
+            </div>
+            <ul>
+                <li><strong>Seletor de Elemento:</strong> <code>p { }</code> (afeta todos os parágrafos)</li>
+                <li><strong>Seletor de Classe:</strong> <code>.minha-classe { }</code> (usa o atributo class="minha-classe")</li>
+                <li><strong>Seletor de ID:</strong> <code>#meu-id { }</code> (único para um elemento específico)</li>
+            </ul>
+        </section>
+
+        <section id="boxmodel">
+            <h2>3. O Modelo de Caixa (Box Model)</h2>
+            <p>Todo elemento no CSS é visto como uma caixa retangular. Ele é composto por:</p>
+            <ul>
+                <li><strong>Content:</strong> O conteúdo real (texto/imagem).</li>
+                <li><strong>Padding:</strong> Espaço interno entre o conteúdo e a borda.</li>
+                <li><strong>Border:</strong> A borda que envolve o padding e o conteúdo.</li>
+                <li><strong>Margin:</strong> Espaço externo, fora da borda, para separar de outros elementos.</li>
+            </ul>
+            
+            
+
+            <div class="box-model-demo">
+                Exemplo visual de um elemento com Padding e Border
+            </div>
+        </section>
+
+        <section id="layout">
+            <h2>4. Layout Moderno (Flexbox & Grid)</h2>
+            <p>Antigamente usávamos "floats" para organizar sites. Hoje, usamos ferramentas mais poderosas:</p>
+            
+            <h3>Flexbox</h3>
+            <p>Ideal para alinhar elementos em uma única dimensão (linha ou coluna).</p>
+            <div class="code-block">
+                .container { <br>
+                &nbsp;&nbsp;display: <span class="value">flex</span>; <br>
+                &nbsp;&nbsp;justify-content: <span class="value">space-around</span>; <br>
+                }
+            </div>
+
+            
+
+            <h3>CSS Grid</h3>
+            <p>Perfeito para layouts complexos em duas dimensões (linhas e colunas simultâneas).</p>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; color: #667;">
+        <p>&copy; 2026 - Guia de Estudos Web</p>
+    </footer>
+
+</body>
+</html>

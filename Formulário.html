@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Pessoal e Académico</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #333; }
+        
+        fieldset { border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        legend { font-weight: bold; padding: 0 10px; color: #007bff; }
+        
+        .campo { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: 500; }
+        input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        
+        button { width: 100%; padding: 12px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: 0.3s; }
+        button:hover { background-color: #0056b3; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 30px; background: white; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; font-size: 14px; }
+        th { background-color: #007bff; color: white; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Registo de Dados</h2>
+    
+    <form id="meuFormulario">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <div class="campo">
+                <label>Nome Completo:</label>
+                <input type="text" id="nome" required>
+            </div>
+            <div class="campo">
+                <label>Data de Nascimento:</label>
+                <input type="date" id="nascimento" required>
+            </div>
+            <div class="campo">
+                <label>E-mail:</label>
+                <input type="email" id="email" required>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Dados Académicos</legend>
+            <div class="campo">
+                <label>Escola:</label>
+                <input type="text" id="escola" required>
+            </div>
+            <div class="campo">
+                <label>Curso:</label>
+                <input type="text" id="curso" required>
+            </div>
+            <div class="campo">
+                <label>Classe/Ano:</label>
+                <input type="text" id="classe" required>
+            </div>
+            <div class="campo">
+                <label>Turno:</label>
+                <select id="turno">
+                    <option value="Manhã">Manhã</option>
+                    <option value="Tarde">Tarde</option>
+                    <option value="Noite">Noite</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <button type="button" onclick="adicionarNaTabela()">Registar Dados</button>
+    </form>
+
+    <table id="tabelaDados">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Escola</th>
+                <th>Curso</th>
+                <th>Classe</th>
+                <th>Turno</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tbody>
+    </table>
+</div>
+
+<script>
+    function adicionarNaTabela() {
+        const tabela = document.getElementById('tabelaDados').getElementsByTagName('tbody')[0];
+        const novaLinha = tabela.insertRow();
+
+        // Lista de IDs que queremos capturar
+        const ids = ['nome', 'email', 'escola', 'curso', 'classe', 'turno'];
+        
+        ids.forEach((id, index) => {
+            let valor = document.getElementById(id).value;
+            let celula = novaLinha.insertCell(index);
+            celula.innerText = valor;
+        });
+
+        // Limpar formulário após envio
+        document.getElementById('meuFormulario').reset();
+    }
+</script>
+
+</body>
+</html>

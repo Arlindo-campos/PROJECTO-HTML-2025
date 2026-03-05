@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Meus Dados Acadêmicos</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .formulario { background: #f9f9f9; padding: 15px; border-radius: 8px; border: 1px solid #ccc; }
+        input { margin-bottom: 10px; padding: 8px; width: 200px; display: block; }
+        button { padding: 10px 20px; cursor: pointer; background-color: #28a745; color: white; border: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <h2> Tabela Acadêmica</h2>
+
+    <div class="formulario">
+        <label>Nome:</label>
+        <input type="text" id="nome" placeholder="Digite seu nome">
+        
+        <label>Escola:</label>
+        <input type="text" id="escola" placeholder="Ex: Imel">
+        
+        <label>Curso:</label>
+        <input type="text" id="curso" placeholder="Ex: Informática">
+        
+        <label>Classe:</label>
+        <input type="text" id="classe" placeholder="Ex: 10ª Classe">
+        
+        <label>Endereço da Escola:</label>
+        <input type="text" id="endereco" placeholder="Ex: Rua, Bairro...">
+        
+        <label>Turno:</label>
+        <input type="text" id="turno" placeholder="Ex: Manhã, Tarde ou Noite">
+
+        <button onclick="adicionarDados()">Gerar Tabela</button>
+    </div>
+
+    <table id="tabelaAcademica">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Escola</th>
+                <th>Curso</th>
+                <th>Classe</th>
+                <th>Endereço</th>
+                <th>Turno</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tbody>
+    </table>
+
+    <script>
+        function adicionarDados() {
+            // 1. Pegar os valores dos campos de texto
+            const nome = document.getElementById('nome').value;
+            const escola = document.getElementById('escola').value;
+            const curso = document.getElementById('curso').value;
+            const classe = document.getElementById('classe').value;
+            const endereco = document.getElementById('endereco').value;
+            const turno = document.getElementById('turno').value;
+
+            // 2. Selecionar o corpo da tabela
+            const tabela = document.getElementById('tabelaAcademica').getElementsByTagName('tbody')[0];
+
+            // 3. Criar uma nova linha (tr) e inserir as células (td)
+            const novaLinha = tabela.insertRow();
+
+            novaLinha.insertCell(0).innerText = nome;
+            novaLinha.insertCell(1).innerText = escola;
+            novaLinha.insertCell(2).innerText = curso;
+            novaLinha.insertCell(3).innerText = classe;
+            novaLinha.insertCell(4).innerText = endereco;
+            novaLinha.insertCell(5).innerText = turno;
+
+            // 4. Limpar os campos após adicionar
+            document.querySelectorAll('input').forEach(input => input.value = '');
+        }
+    </script>
+
+</body>
+</html>

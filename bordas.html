@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo de Bordas Criativas</title>
+    <style>
+        body {
+            background-color: #0f172a; /* Fundo Escuro Profundo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            min-height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+            flex-wrap: wrap;
+        }
+
+        /* OPÇÃO 1: Borda com Gradiente */
+        .box-gradient {
+            width: 250px;
+            height: 150px;
+            background: #1e293b;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 15px;
+            /* A mágica acontece aqui: */
+            border: 4px solid transparent;
+            background-image: linear-gradient(#1e293b, #1e293b), 
+                              linear-gradient(to right, #3b82f6, #9333ea);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+        }
+
+        /* OPÇÃO 2: Borda Dupla Estilizada (Neon) */
+        .box-double {
+            width: 250px;
+            height: 150px;
+            background: #1e293b;
+            color: #22d3ee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 6px double #22d3ee; /* Borda dupla */
+            border-radius: 0 30px 0 30px; /* Bordas cortadas */
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.3);
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* OPÇÃO 3: Borda Tracejada Suave */
+        .box-dashed {
+            width: 250px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #cbd5e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px dashed #64748b;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .box-dashed:hover {
+            border-color: #f59e0b;
+            color: #f59e0b;
+            cursor: pointer;
+        }
+
+        span { padding: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <div class="box-gradient">
+        <span>Borda com Gradiente</span>
+    </div>
+
+    <div class="box-double">
+        <span>Borda Dupla Neon</span>
+    </div>
+
+    <div class="box-dashed">
+        <span>Borda Tracejada (Hover)</span>
+    </div>
+
+</body>
+</html>

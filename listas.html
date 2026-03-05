@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto André Vunge - Listas</title>
+    <style>
+        /* Fundo Diferente: Mesh Gradient */
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-color: #e5e5f7;
+            background-image: radial-gradient(#441986 0.5px, #f4f4f9 0.5px);
+            background-size: 10px 10px; /* Fundo com micro-pontos */
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            background: white;
+            width: 800px;
+            height: 500px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+            border: 8px solid #fff;
+        }
+
+        /* Menu Lateral (Lista Não Ordenada - ul) */
+        .sidebar {
+            width: 250px;
+            background: #441986;
+            padding: 40px 20px;
+            color: white;
+        }
+
+        .sidebar h2 { font-size: 18px; margin-bottom: 30px; opacity: 0.8; }
+
+        .menu-list {
+            list-style: none; /* Remove os pontos padrão */
+            padding: 0;
+        }
+
+        .menu-list li {
+            margin-bottom: 15px;
+        }
+
+        .menu-list a {
+            color: #d1d1d1;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 12px;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .menu-list a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateX(5px);
+        }
+
+        /* Conteúdo Principal (Lista Ordenada - ol) */
+        .content {
+            flex: 1;
+            padding: 50px;
+            background: #fff;
+        }
+
+        .trimestre-list {
+            counter-reset: my-counter; /* Reinicia o contador para estilo customizado */
+            list-style: none;
+            padding: 0;
+        }
+
+        .trimestre-list li {
+            counter-increment: my-counter;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            border-left: 5px solid #441986;
+            transition: 0.3s;
+        }
+
+        /* Estilizando o número da lista (Bordas Circulares) */
+        .trimestre-list li::before {
+            content: counter(my-counter);
+            width: 30px;
+            height: 30px;
+            background: #441986;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .trimestre-list li:hover {
+            background: #eee7f7;
+            transform: scale(1.02);
+        }
+
+        h1 { color: #333; margin-top: 0; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>NAVEGAÇÃO</h2>
+            <ul class="menu-list">
+                <li><a href="#">🏠 Home</a></li>
+                <li><a href="#">📊 Relatórios</a></li>
+                <li><a href="#">⚙️ Configurações</a></li>
+                <li><a href="#">👤 Perfil</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <h1>Olá, Arlindo Campos</h1>
+            <p>Selecione o período desejado:</p>
+            
+            <ol class="trimestre-list">
+                <li>Ver progresso do 1º Trimestre</li>
+                <li>Analisar notas do 2º Trimestre</li>
+                <li>Planejamento do 3º Trimestre</li>
+            </ol>
+        </main>
+    </div>
+
+</body>
+</html>
